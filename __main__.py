@@ -2,6 +2,7 @@ from sympy.parsing.sympy_parser import parse_expr
 from core.theorem import binomial_theorem
 from core.utils import k_to_list, k_complete, add_plus
 
+
 def k_input_menu():
     while True:
         try:
@@ -12,7 +13,7 @@ def k_input_menu():
                 raise ValueError("Valor fuera de rango")
         except ValueError:
             pass
-        
+
 
 def main_input():
     x_sustitution = parse_expr(input("Introduce el valor de X: "))
@@ -21,23 +22,24 @@ def main_input():
     return x_sustitution, y_sustitution, n
 
 
-def main():    
+def main():
     x, y, n = main_input()
     k_menu = k_input_menu()
     if k_menu == 1:
         k = k_to_list()
         for i in k:
-            print(parse_expr(binomial_theorem(n,i,x,y)), end=" ")
+            print(parse_expr(binomial_theorem(n, i, x, y)), end=" ")
         print("\n")
     else:
         k = k_complete(n)
         for i in k:
-            if add_plus(str(binomial_theorem(n,i,x,y))) == False:
+            if add_plus(str(binomial_theorem(n, i, x, y))) == False:
                 print("+", end="")
-                print(binomial_theorem(n,i,x,y), end=" ")
+                print(binomial_theorem(n, i, x, y), end=" ")
             else:
-                print(binomial_theorem(n,i,x,y), end=" ")
+                print(binomial_theorem(n, i, x, y), end=" ")
         print("\n")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
