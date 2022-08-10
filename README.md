@@ -24,6 +24,7 @@ Activación del Entorno Virtual
 `source teorema/bin/activate`
 
 **WINDOWS**
+
 `teorema\Scripts\activate.bat`
 
     // Directorio de trabajo
