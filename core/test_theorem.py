@@ -1,5 +1,5 @@
 from theorem import combination, binomial_theorem
-from utils import add_plus
+from utils import is_positive
 import pytest
 
 
@@ -18,18 +18,18 @@ def test_binomiarl_theorem():
     assert binomial_theorem(16, 13, 2, -3) == -7142567040
 
 
-def test_add_plus():
-    assert add_plus("----") == True
-    assert add_plus("+++++") == False
-    assert add_plus("-+-+") == True
-    assert add_plus("adlkfja") == False
+def test_is_positive():
+    assert is_positive("----") == True
+    assert is_positive("+++++") == False
+    assert is_positive("-+-+") == True
+    assert is_positive("adlkfja") == False
 
 
 def test_theorem():
     test_combination()
     test_comination_n_zero()
     test_binomiarl_theorem()
-    test_add_plus()
+    test_is_positive()
 
 
 if __name__ == "__main__":
