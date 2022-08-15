@@ -2,7 +2,7 @@ def k_to_list(n):
     k_items = [
         int(item)
         for item in input("Introduce los elementos separados por espacios: ").split()
-        if int(item) > 0 and int(item) <= n
+        if int(item) >= 0 and int(item) <= n
     ]
     return k_items
 
