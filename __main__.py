@@ -23,11 +23,12 @@ def main_input():
 
 
 def print_binomialtheorem(n, i, x, y):
-    if is_positive(str(binomial_theorem(n, i, x, y))) == False:
+    resultBinomial = str(binomial_theorem(n, i, x, y))
+    if is_positive(resultBinomial) == False:
         print("+", end="")
-        print(binomial_theorem(n, i, x, y), end=" ")
+        print(resultBinomial, end=" ")
     else:
-        print(parse_expr(str(binomial_theorem(n, i, x, y))), end=" ")
+        print(parse_expr(resultBinomial), end=" ")
 
 
 def main():
