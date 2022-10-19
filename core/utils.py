@@ -13,8 +13,8 @@ def k_complete(n: int):
     return k_items
 
 
-def is_positive(prompt: str):
-    return prompt[0] == "-"
+def is_positive(prompt: str) -> bool:
+    return prompt[0] != "-"
 
 
 if __name__ == "__main__":

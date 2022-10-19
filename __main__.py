@@ -24,7 +24,7 @@ def main_input():
 
 def print_binomialtheorem(n, i, x, y):
     resultBinomial = str(binomial_theorem(n, i, x, y))
-    if is_positive(resultBinomial) is False:
+    if is_positive(resultBinomial):
         print(f"+{resultBinomial}", end=" ")
     else:
         print(parse_expr(resultBinomial), end=" ")
