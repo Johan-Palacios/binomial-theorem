@@ -6,8 +6,8 @@ from core.utils import k_to_list, k_complete, is_positive
 def k_input_menu():
     while True:
         try:
-            k_value = int(input("1. Listar elementos de k\n2. Todos\n"))
-            if k_value != 1 or k_value != 2:
+            k_value = int(input("1. Listar elementos de k\n2. Todos\n--> "))
+            if k_value in [1, 2]:
                 return k_value
             else:
                 raise ValueError("Valor fuera de rango")
@@ -24,9 +24,8 @@ def main_input():
 
 def print_binomialtheorem(n, i, x, y):
     resultBinomial = str(binomial_theorem(n, i, x, y))
-    if is_positive(resultBinomial) == False:
-        print("+", end="")
-        print(resultBinomial, end=" ")
+    if is_positive(resultBinomial) is False:
+        print(f"+{resultBinomial}", end=" ")
     else:
         print(parse_expr(resultBinomial), end=" ")
 
@@ -35,14 +34,19 @@ def main():
     x, y, n = main_input()
     k_menu = k_input_menu()
     if k_menu == 1:
-        k = k_to_list(n)
-        for i in k:
-            print_binomialtheorem(n, i, x, y)
+        values = (
+            input("Introduce los elementos separados por comas: ")
+            .replace(" ", "")
+            .split(",")
+        )
+        k_list = k_to_list(n, values)
+        for k in k_list:
+            print_binomialtheorem(n, k, x, y)
         print("\n")
     else:
-        k = k_complete(n)
-        for i in k:
-            print_binomialtheorem(n, i, x, y)
+        k_list = k_complete(n)
+        for k in k_list:
+            print_binomialtheorem(n, k, x, y)
         print("\n")
 
 

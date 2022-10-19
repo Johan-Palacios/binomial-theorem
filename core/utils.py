@@ -1,9 +1,10 @@
-def k_to_list(n):
-    k_items = [
-        int(item)
-        for item in input("Introduce los elementos separados por espacios: ").split()
-        if int(item) >= 0 and int(item) <= n
-    ]
+def k_to_list(n: int, values: list) -> list:
+    k_items = []
+    for value in values:
+        if value == "":
+            continue
+        if (int(value) >= 0 and int(value) <= n) and (int(value) not in k_items):
+            k_items.append(int(value))
     return k_items
 
 
