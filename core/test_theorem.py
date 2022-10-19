@@ -19,10 +19,9 @@ def test_binomiarl_theorem():
 
 
 def test_is_positive():
-    assert is_positive("----") == True
-    assert is_positive("+++++") == False
-    assert is_positive("-+-+") == True
-    assert is_positive("adlkfja") == False
+    assert is_positive("----") is False
+    assert is_positive("+++++") is True
+    assert is_positive("-+-+") is False
 
 
 def test_theorem():
