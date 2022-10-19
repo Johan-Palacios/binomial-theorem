@@ -16,10 +16,14 @@ def k_input_menu():
 
 
 def main_input():
-    x_sustitution = parse_expr(input("Introduce el valor de X: "))
-    y_sustitution = parse_expr(input("Introduce el valor de Y: "))
-    n = int(input("Introduce el valor de N: "))
-    return x_sustitution, y_sustitution, n
+    while True:
+        try:
+            x_sustitution = parse_expr(input("Introduce el valor de X: "))
+            y_sustitution = parse_expr(input("Introduce el valor de Y: "))
+            n = int(input("Introduce el valor de N: "))
+            return x_sustitution, y_sustitution, n
+        except Exception:
+            continue
 
 
 def print_binomialtheorem(n, i, x, y):

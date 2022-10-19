@@ -3,8 +3,11 @@ def k_to_list(n: int, values: list) -> list:
     for value in values:
         if value == "":
             continue
-        if (int(value) >= 0 and int(value) <= n) and (int(value) not in k_items):
-            k_items.append(int(value))
+        try:
+            if (int(value) >= 0 and int(value) <= n) and (int(value) not in k_items):
+                k_items.append(int(value))
+        except Exception:
+            continue
     return k_items
 
 
