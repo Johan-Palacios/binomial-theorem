@@ -12,7 +12,7 @@ def k_input_menu():
             else:
                 raise ValueError("Valor fuera de rango")
         except ValueError:
-            pass
+            continue
 
 
 def main_input():
