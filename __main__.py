@@ -1,6 +1,7 @@
 from sympy.parsing.sympy_parser import parse_expr
 from core.theorem import binomial_theorem
 from core.utils import k_to_list, k_complete, is_positive
+from sympy import pprint
 
 
 def k_input_menu():
@@ -26,12 +27,12 @@ def main_input():
             continue
 
 
-def print_binomialtheorem(n, i, x, y):
+def binomial_theorem_complete(n, i, x, y, binomial_solution):
     resultBinomial = str(binomial_theorem(n, i, x, y))
     if is_positive(resultBinomial):
-        print(f"+{resultBinomial}", end=" ")
+        return "+" + resultBinomial
     else:
-        print(parse_expr(resultBinomial), end=" ")
+        return resultBinomial
 
 
 def main():
@@ -44,13 +45,17 @@ def main():
             .split(",")
         )
         k_list = k_to_list(n, values)
+        binomial_solution = ""
         for k in k_list:
-            print_binomialtheorem(n, k, x, y)
+            binomial_solution += binomial_theorem_complete(n, k, x, y, binomial_solution)
+        pprint(parse_expr(binomial_solution))
         print("\n")
     else:
         k_list = k_complete(n)
+        binomial_solution = ""
         for k in k_list:
-            print_binomialtheorem(n, k, x, y)
+            binomial_solution += binomial_theorem_complete(n, k, x, y, binomial_solution)
+        pprint(parse_expr(binomial_solution))
         print("\n")
 
 
