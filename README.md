@@ -7,7 +7,7 @@ Este programa realizado en [Python](https://www.python.org/ "Python"), permite e
 
 ## Preview ✨
 
-![image](https://user-images.githubusercontent.com/77251405/197453881-3695f9c2-05a1-4631-935a-92cc07a4419f.png)
+![image](https://user-images.githubusercontent.com/77251405/198766518-d2de91b5-6847-494c-a3bf-debc29cd13cd.png)
 
 ### Preparación de entorno 🚀
 
